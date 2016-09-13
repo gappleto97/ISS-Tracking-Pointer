@@ -75,7 +75,8 @@ void twoline2rv
       char      typerun,  char typeinput, char opsmode,
       gravconsttype       whichconst,
       double& startmfe, double& stopmfe, double& deltamin,
-      elsetrec& satrec
+      elsetrec& satrec,
+      bool& isItCalled
      )
      {
        const double deg2rad  =   pi / 180.0;         //   0.0174532925199433
@@ -195,55 +196,56 @@ void twoline2rv
        // ---- input start stop times manually
        if ((typerun != 'v') && (typerun != 'c'))
          {
-         // ------------- enter start/stop ymd hms values --------------------
-           if (typeinput == 'e')
-             {
-               printf("input start prop year mon day hr min sec \n");
-               // make sure there is no space at the end of the format specifiers in scanf!
-               scanf( "%i %i %i %i %i %lf",&startyear, &startmon, &startday, &starthr, &startmin, &startsec);
-               fflush(stdin);
-               jday( startyear,startmon,startday,starthr,startmin,startsec, jdstart );
-
-               printf("input stop prop year mon day hr min sec \n");
-               scanf( "%i %i %i %i %i %lf",&stopyear, &stopmon, &stopday, &stophr, &stopmin, &stopsec);
-               fflush(stdin);
-               jday( stopyear,stopmon,stopday,stophr,stopmin,stopsec, jdstop );
-
-               startmfe = (jdstart - satrec.jdsatepoch) * 1440.0;
-               stopmfe  = (jdstop - satrec.jdsatepoch) * 1440.0;
-
-               printf("input time step in minutes \n");
-               scanf( "%lf",&deltamin );
-             }
-           // -------- enter start/stop year and days of year values -----------
-           if (typeinput == 'd')
-             {
-               printf("input start year dayofyr \n");
-               scanf( "%i %lf",&startyear, &startdayofyr );
-               printf("input stop year dayofyr \n");
-               scanf( "%i %lf",&stopyear, &stopdayofyr );
-
-               days2mdhms ( startyear,startdayofyr, mon,day,hr,minute,sec );
-               jday( startyear,mon,day,hr,minute,sec, jdstart );
-               days2mdhms ( stopyear,stopdayofyr, mon,day,hr,minute,sec );
-               jday( stopyear,mon,day,hr,minute,sec, jdstop );
-
-               startmfe = (jdstart - satrec.jdsatepoch) * 1440.0;
-               stopmfe  = (jdstop - satrec.jdsatepoch) * 1440.0;
-
-               printf("input time step in minutes \n");
-               scanf( "%lf",&deltamin );
-             }
-           // ------------------ enter start/stop mfe values -------------------
-           if (typeinput == 'm')
-             {
-               printf("input start min from epoch \n");
-               scanf( "%lf",&startmfe );
-               printf("input stop min from epoch \n");
-               scanf( "%lf",&stopmfe );
-               printf("input time step in minutes \n");
-               scanf( "%lf",&deltamin );
-             }
+          isItCalled = true;
+//         // ------------- enter start/stop ymd hms values --------------------
+//           if (typeinput == 'e')
+//             {
+//               printf("input start prop year mon day hr min sec \n");
+//               // make sure there is no space at the end of the format specifiers in scanf!
+//               scanf( "%i %i %i %i %i %lf",&startyear, &startmon, &startday, &starthr, &startmin, &startsec);
+//               fflush(stdin);
+//               jday( startyear,startmon,startday,starthr,startmin,startsec, jdstart );
+//
+//               printf("input stop prop year mon day hr min sec \n");
+//               scanf( "%i %i %i %i %i %lf",&stopyear, &stopmon, &stopday, &stophr, &stopmin, &stopsec);
+//               fflush(stdin);
+//               jday( stopyear,stopmon,stopday,stophr,stopmin,stopsec, jdstop );
+//
+//               startmfe = (jdstart - satrec.jdsatepoch) * 1440.0;
+//               stopmfe  = (jdstop - satrec.jdsatepoch) * 1440.0;
+//
+//               printf("input time step in minutes \n");
+//               scanf( "%lf",&deltamin );
+//             }
+//           // -------- enter start/stop year and days of year values -----------
+//           if (typeinput == 'd')
+//             {
+//               printf("input start year dayofyr \n");
+//               scanf( "%i %lf",&startyear, &startdayofyr );
+//               printf("input stop year dayofyr \n");
+//               scanf( "%i %lf",&stopyear, &stopdayofyr );
+//
+//               days2mdhms ( startyear,startdayofyr, mon,day,hr,minute,sec );
+//               jday( startyear,mon,day,hr,minute,sec, jdstart );
+//               days2mdhms ( stopyear,stopdayofyr, mon,day,hr,minute,sec );
+//               jday( stopyear,mon,day,hr,minute,sec, jdstop );
+//
+//               startmfe = (jdstart - satrec.jdsatepoch) * 1440.0;
+//               stopmfe  = (jdstop - satrec.jdsatepoch) * 1440.0;
+//
+//               printf("input time step in minutes \n");
+//               scanf( "%lf",&deltamin );
+//             }
+//           // ------------------ enter start/stop mfe values -------------------
+//           if (typeinput == 'm')
+//             {
+//               printf("input start min from epoch \n");
+//               scanf( "%lf",&startmfe );
+//               printf("input stop min from epoch \n");
+//               scanf( "%lf",&stopmfe );
+//               printf("input time step in minutes \n");
+//               scanf( "%lf",&deltamin );
+//             }
          }
 
        // ------------ perform complete catalog evaluation, -+ 1 day ----------- 

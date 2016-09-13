@@ -39,7 +39,8 @@ void twoline2rv
       char      typerun,  char typeinput, char opsmode,
       gravconsttype       whichconst,
       double& startmfe, double& stopmfe, double& deltamin,
-      elsetrec& satrec
+      elsetrec& satrec,
+      bool& isItCalled
      );
 
 #endif
