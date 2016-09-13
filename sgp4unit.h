@@ -54,6 +54,7 @@
 #define SGP4Version  "SGP4 Version 2011-12-30"
 
 #define pi 3.14159265358979323846
+#define twopi 6.28318530717958647692
 
 // -------------------------- structure declarations ----------------------------
 typedef enum

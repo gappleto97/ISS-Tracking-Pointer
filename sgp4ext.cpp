@@ -208,14 +208,15 @@ double  angle
 * Note: This function appears to be defined in std since 2011. I commented it out. - Grady Hillhouse 2015
 * --------------------------------------------------------------------------- */
 
-/*double  asinh
+#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
+double  asinh
         (
           double xval
         )
    {
      return log( xval + sqrt( xval*xval + 1.0 ) );
    }  // end asinh
-*/
+#endif
 
 /* -----------------------------------------------------------------------------
 *
@@ -374,12 +375,11 @@ void rv2coe
      )
      {
        double undefined, small, hbar[3], nbar[3], magr, magv, magn, ebar[3], sme,
-              rdotv, infinite, temp, c1, hk, twopi, magh, halfpi, e;
+              rdotv, infinite, temp, c1, hk, magh, halfpi, e;
 
        int i;
        char typeorbit[3];
 
-     twopi  = 2.0 * pi;
      halfpi = 0.5 * pi;
      small  = 0.00000001;
      undefined = 999999.1;

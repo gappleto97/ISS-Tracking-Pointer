@@ -1,18 +1,25 @@
 #ifndef _sgp4coord_
 #define _sgp4coord_
 
-/*     
-sgp4coord.h
+/*
+  sgp4coord.h
 
-This file contains miscellaneous functions required for coordinate transformation.
-Functions were originally written for Matlab as companion code for "Fundamentals of Astrodynamics 
-and Applications" by David Vallado (2007). (w) 719-573-2600, email dvallado@agi.com
+  This file contains miscellaneous functions required for coordinate transformation.
+  Functions were originally written for Matlab as companion code for "Fundamentals of Astrodynamics
+  and Applications" by David Vallado (2007). (w) 719-573-2600, email dvallado@agi.com
 
-Ported to C++ by Grady Hillhouse with some modifications, July 2015.
+  Ported to C++ by Grady Hillhouse with some modifications, July 2015.
 */
 
 #include <math.h>
 #include <string.h>
+#ifdef ARDUINO
+  #if ARDUINO >= 100
+    #include "Arduino.h"
+  #else
+    #include "WProgram.h"
+  #endif
+#endif
 
 void teme2ecef(double rteme[3], double vteme[3], double jdut1, double recef[3], double vecef[3]);
 
@@ -28,6 +35,7 @@ void rot3(double invec[3], double xval, double outvec[3]);
 
 void rot2(double invec[3], double xval, double outvec[3]);
 
-double getJulianFromUnix(double unixSecs);
+//double getJulianFromUnix(double unixSecs);
+#define getJulianFromUnix(unixSecs) ( unixSecs / 86400.0 ) + 2440587.5
 
 #endif

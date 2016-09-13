@@ -219,7 +219,6 @@ static void dpper
      )
 {
      /* --------------------- local variables ------------------------ */
-     const double twopi = 2.0 * pi;
      double alfdp, betdp, cosip, cosop, dalf, dbet, dls,
           f2,    f3,    pe,    pgh,   ph,   pinc, pl ,
           sel,   ses,   sghl,  sghs,  shll, shs,  sil,
@@ -431,7 +430,6 @@ static void dscom
      const double zcosis  =  0.91744867;
      const double zcosgs  =  0.1945905;
      const double zsings  = -0.98088458;
-     const double twopi   =  2.0 * pi;
 
      /* --------------------- local variables ------------------------ */
      int lsflg;
@@ -701,7 +699,6 @@ static void dsinit
      )
 {
      /* --------------------- local variables ------------------------ */
-     const double twopi = 2.0 * pi;
 
      double ainv2 , aonv=0.0, cosisq, eoc, f220 , f221  , f311  ,
           f321  , f322  , f330  , f441  , f442  , f522  , f523  ,
@@ -989,7 +986,6 @@ static void dspace
        double& mm,    double& xni,   double& nodem,  double& dndt,  double& nm
      )
 {
-     const double twopi = 2.0 * pi;
      int iretn, iret;
      double delt, ft, theta, x2li, x2omi, xl, xldot , xnddt, xndt, xomi, g22, g32,
           g44, g52, g54, fasx2, fasx4, fasx6, rptim , step2, stepn , stepp;
@@ -1194,7 +1190,6 @@ static void initl
      // sgp4fix use old way of finding gst
      double ds70;
      double ts70, tfrac, c1, thgr70, fk5r, c1p2p;
-     const double twopi = 2.0 * pi;
 
      /* ----------------------- earth constants ---------------------- */
      // sgp4fix identify constants and allow alternate values
@@ -1713,7 +1708,7 @@ bool sgp4
          uy   , uz    , vx   , vy    ,  vz    , inclm , mm  ,
          nm   , nodem, xinc , xincp ,  xl    , xlm   , mp  ,
          xmdf , xmx   , xmy  , nodedf, xnode , nodep, tc  , dndt,
-         twopi, x2o3  , j2   , j3    , tumin, j4 , xke   , j3oj2, radiusearthkm,
+         x2o3  , j2   , j3    , tumin, j4 , xke   , j3oj2, radiusearthkm,
          mu, vkmpersec, delmtemp;
      int ktr;
 
@@ -1722,7 +1717,6 @@ bool sgp4
      // the old check used 1.0 + cos(pi-1.0e-9), but then compared it to
      // 1.5 e-12, so the threshold was changed to 1.5e-12 for consistency
      const double temp4 =   1.5e-12;
-     twopi = 2.0 * pi;
      x2o3  = 2.0 / 3.0;
      // sgp4fix identify constants and allow alternate values
      getgravconst( whichconst, tumin, mu, radiusearthkm, xke, j2, j3, j4, j3oj2 );
@@ -2015,13 +2009,12 @@ double  gstime
           double jdut1
         )
    {
-     const double twopi = 2.0 * pi;
      const double deg2rad = pi / 180.0;
-     double       temp, tut1;
+     double       temp;
 
-     tut1 = (jdut1 - 2451545.0) / 36525.0;
-     temp = -6.2e-6* tut1 * tut1 * tut1 + 0.093104 * tut1 * tut1 +
-             (876600.0*3600 + 8640184.812866) * tut1 + 67310.54841;  // sec
+     temp = (jdut1 - 2451545.0) / 36525.0;
+     temp = -6.2e-6* temp * temp * temp + 0.093104 * temp * temp +
+             (876600.0*3600 + 8640184.812866) * temp + 67310.54841;  // sec
      temp = fmod(temp * deg2rad / 240.0, twopi); //360/86400 = 1/240, to deg, to rad
 
      // ------------------------ check quadrants ---------------------

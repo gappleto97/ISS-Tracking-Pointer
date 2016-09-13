@@ -144,7 +144,6 @@ latlongh        Latitude, longitude, and altitude (rad, rad, and km)
 
 void ijk2ll(double r[3], double latlongh[3])
 {
-    double twopi = 2.0*pi;
     double small = 0.00000001;          //small value for tolerances
     double re = 6378.137;               //radius of earth in km
     double eesqrd = 0.006694385000;     //eccentricity of earth sqrd
@@ -380,8 +379,8 @@ getJulianFromUnix
 
 returns the Julian Date from Unix Time
 */
-
-double getJulianFromUnix(double unixSecs)
-{
-   return ( unixSecs / 86400.0 ) + 2440587.5;
-}
+//
+//double getJulianFromUnix(double unixSecs)
+//{
+//   return ( unixSecs / 86400.0 ) + 2440587.5;
+//}

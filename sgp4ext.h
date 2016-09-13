@@ -64,11 +64,13 @@ void    newtonnu
           double& e0, double& m
         );
 
-/*double  asinh
+#if defined(__AVR_ATmega1280__) || defined(__AVR_ATmega2560__)
+double  asinh
         (
           double xval
         );
-*/
+#endif
+
 void    rv2coe
         (
           double r[3], double v[3], double mu,
