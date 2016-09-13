@@ -1,8 +1,20 @@
 # ISS-Tracking-Pointer
 ISS Orbit Tracking Pointer
 
-See YouTube video linked below for more information about this project. The code compiles using mbed on the Nucleo F401RE development board.
+See YouTube video linked below for more information about this project. This branch compiles onto the Arduino 101. It can probably be used on any Arduino board by replacing the `Curie` libraries with their standard complements.
 
+This specific branch is designed for use with the 28BYJ-48 stepper motors. You can find these on Amazon [here](https://smile.amazon.com/gp/product/B01CP18J4A/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1). It may be cheaper in other places, but it's hard to complain about $3 per motor.
+
+Next Steps:
+* Make stepper motors move more efficiently
+* Prevent stepper motors from tangling their wires
+
+Stretch Goals:
+* Add switching setup to find correct starting orientation
+* Trim code a bit more to allow for future improvements
+* Automatically detect whether you're compiling for Curie-based systems or not
+ 
+After these are done I will work on improving the Nucleo F401RE side of things.
 
 <a href="https://www.youtube.com/watch?v=sIE0mcOGnms" target="_blank"><img src="http://img.youtube.com/vi/sIE0mcOGnms/0.jpg" 
 alt="ISS ORBIT TRACKING POINTER" width="480" height="360" border="10" /></a>
