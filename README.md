@@ -12,9 +12,17 @@ Next Steps:
 Stretch Goals:
 * Add switching setup to find correct starting orientation
 * Trim code a bit more to allow for future improvements
-* Automatically detect whether you're compiling for Curie-based systems or not
  
 After these are done I will work on improving the Nucleo F401RE side of things.
+
+List of supported devices:
+
+* Arduino 101
+* Arduino Mega (ATmega1280)
+* Arduino Mega (ATmega2560)
+* Arduino Mega ADK
+
+It may work on other platforms using some preprocessor magic, but this currently seems unlikely.
 
 <a href="https://www.youtube.com/watch?v=sIE0mcOGnms" target="_blank"><img src="http://img.youtube.com/vi/sIE0mcOGnms/0.jpg" 
 alt="ISS ORBIT TRACKING POINTER" width="480" height="360" border="10" /></a>
