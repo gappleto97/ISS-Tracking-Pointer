@@ -4,7 +4,11 @@ Arduino Port:
 Gabe Appleton 2016
 */
 
-#include <CurieTime.h>
+#if defined(_VARIANT_ARDUINO_101_X_)
+  #include <CurieTime.h>
+#else
+  #include <Time.h>
+#endif
 #include "sgp4io.h"
 #include "sgp4coord.h"
 
