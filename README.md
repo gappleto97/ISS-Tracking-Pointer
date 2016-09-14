@@ -7,29 +7,29 @@ This specific branch is designed for use with the 28BYJ-48 stepper motors. You c
 
 Stretch Goals:
 * Add switching setup to find correct starting orientation
-* Trim code a bit more to allow for future improvements (may be near minimum already)
+* Trim code a bit more to allow for future improvements and more 101 features (may be near minimum already)
  
 After these are done I will work on improving the Nucleo F401RE side of things.
 
-Table of supported devices:
+Table of supported Arduino models:
 
-|             Feature             | Arduino 101 | Arduino Mega (1280) | Arduino Mega (2560) | Arduino Mega (ADK) | Others? |
-| :------------------------------ | :---------: | :-----------------: | :-----------------: | :----------------: | :-----: |
-| Basic                           | x           | x                   | x                   | x                  | ?       |
-| No Slip Ring                    | x           | x                   | x                   | x                  | ?       |
-| Debug                           | x           | x                   | x                   | x                  | ?       |
-| GPS                             | x           | x                   | x                   | x                  | ?       |
-| Ethernet                        | x           | x                   | x                   | x                  | ?       |
-| GPS + Debug                     | x           | x                   | x                   | x                  | ?       |
-| Ethernet + Debug                | x           | x                   | x                   | x                  | ?       |
-| GPS + Ethernet                  | x           | x                   | x                   | x                  | ?       |
-| GPS + Ethernet + Debug          |             | x                   | x                   | x                  | ?       |
-| GPS + Ethernet + No Slip Ring   | x           | x                   | x                   | x                  | ?       |
-| GPS + Debug + No Slip Ring      | x           | x                   | x                   | x                  | ?       |
-| Ethernet + Debug + No Slip Ring | x           | x                   | x                   | x                  | ?       |
-| All                             |             | x                   | x                   | x                  | ?       |
+|             Feature             |  101  | Mega (1280) | Mega (2560) | Mega (ADK) |  Due  | Zero  | MKR1000 | Others? |
+| :------------------------------ | :---: | :---------: | :---------: | :--------: | :---: | :---: | :-----: | :-----: |
+| Basic                           | x     | x           | x           | x          | x     | x     | x       | ?       |
+| No Slip Ring                    | x     | x           | x           | x          | x     | x     | x       | ?       |
+| Debug                           | x     | x           | x           | x          | x     | x     | x       | ?       |
+| GPS                             | x     | x           | x           | x          | x     | x     | x       | ?       |
+| Ethernet                        | x     | x           | x           | x          | x     | x     | x       | ?       |
+| GPS + Debug                     | x     | x           | x           | x          | x     | x     | x       | ?       |
+| Ethernet + Debug                | x     | x           | x           | x          | x     | x     | x       | ?       |
+| GPS + Ethernet                  | x     | x           | x           | x          | x     | x     | x       | ?       |
+| GPS + Ethernet + Debug          |       | x           | x           | x          | x     | x     | x       | ?       |
+| GPS + Ethernet + No Slip Ring   | x     | x           | x           | x          | x     | x     | x       | ?       |
+| GPS + Debug + No Slip Ring      | x     | x           | x           | x          | x     | x     | x       | ?       |
+| Ethernet + Debug + No Slip Ring | x     | x           | x           | x          | x     | x     | x       | ?       |
+| All                             |       | x           | x           | x          | x     | x     | x       | ?       |
 
-Note: The Mega listings are theoretical. I have no device to test this on, but it should work.
+Note: The Mega, Zero, Due, and MKR1000 listings are theoretical. I have no device to test this on, but it *should* work. You may need to change some pin constants though. I'm perfectly happy to add some pre-processor changes to automate this if they are brought to my attention.
 
 <a href="https://www.youtube.com/watch?v=sIE0mcOGnms" target="_blank"><img src="http://img.youtube.com/vi/sIE0mcOGnms/0.jpg" 
 alt="ISS ORBIT TRACKING POINTER" width="480" height="360" border="10" /></a>
