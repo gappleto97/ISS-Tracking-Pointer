@@ -5,13 +5,9 @@ See YouTube video linked below for more information about this project. This bra
 
 This specific branch is designed for use with the 28BYJ-48 stepper motors. You can find these on Amazon [here](https://smile.amazon.com/gp/product/B01CP18J4A/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1). It may be cheaper in other places, but it's hard to complain about $3 per motor.
 
-Next Steps:
-* Make stepper motors move more efficiently
-* Prevent stepper motors from tangling their wires
-
 Stretch Goals:
 * Add switching setup to find correct starting orientation
-* Trim code a bit more to allow for future improvements
+* Trim code a bit more to allow for future improvements (may be near minimum already)
  
 After these are done I will work on improving the Nucleo F401RE side of things.
 
