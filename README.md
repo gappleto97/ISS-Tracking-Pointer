@@ -1,9 +1,9 @@
 # ISS-Tracking-Pointer
 ISS Orbit Tracking Pointer
 
-See YouTube video linked below for more information about this project. This branch compiles onto the Arduino 101. It can probably be used on any Arduino board by replacing the `Curie` libraries with their standard complements.
+See YouTube video linked below for more information about this project. This branch compiles onto Arduino devices.
 
-This specific branch is designed for use with the 28BYJ-48 stepper motors. You can find these on Amazon [here](https://smile.amazon.com/gp/product/B01CP18J4A/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1). It may be cheaper in other places, but it's hard to complain about $3 per motor.
+This branch is designed for use with the 28BYJ-48 stepper motors. You can find these on Amazon [here](https://smile.amazon.com/gp/product/B01CP18J4A/ref=oh_aui_detailpage_o06_s00?ie=UTF8&psc=1). It may be cheaper in other places, but it's hard to complain about $3 per motor. There will be a full parts list posted in the near future.
 
 Stretch Goals:
 * Add switching setup to find correct starting orientation
