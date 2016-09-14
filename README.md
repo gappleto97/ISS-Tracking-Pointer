@@ -15,14 +15,25 @@ Stretch Goals:
  
 After these are done I will work on improving the Nucleo F401RE side of things.
 
-List of supported devices:
+Table of supported devices:
 
-* Arduino 101
-* Arduino Mega (ATmega1280)
-* Arduino Mega (ATmega2560)
-* Arduino Mega ADK
+|             Feature             | Arduino 101 | Arduino Mega (1280) | Arduino Mega (2560) | Arduino Mega (ADK) | Others? |
+| :------------------------------ | :---------: | :-----------------: | :-----------------: | :----------------: | :-----: |
+| Basic                           | x           | x                   | x                   | x                  | ?       |
+| No Slip Ring                    | x           | x                   | x                   | x                  | ?       |
+| Debug                           | x           | x                   | x                   | x                  | ?       |
+| GPS                             | x           | x                   | x                   | x                  | ?       |
+| Ethernet                        | x           | x                   | x                   | x                  | ?       |
+| GPS + Debug                     | x           | x                   | x                   | x                  | ?       |
+| Ethernet + Debug                | x           | x                   | x                   | x                  | ?       |
+| GPS + Ethernet                  | x           | x                   | x                   | x                  | ?       |
+| GPS + Ethernet + Debug          |             | x                   | x                   | x                  | ?       |
+| GPS + Ethernet + No Slip Ring   | x           | x                   | x                   | x                  | ?       |
+| GPS + Debug + No Slip Ring      | x           | x                   | x                   | x                  | ?       |
+| Ethernet + Debug + No Slip Ring | x           | x                   | x                   | x                  | ?       |
+| All                             |             | x                   | x                   | x                  | ?       |
 
-It may work on other platforms using some preprocessor magic, but this currently seems unlikely.
+Note: The Mega listings are theoretical. I have no device to test this on, but it should work.
 
 <a href="https://www.youtube.com/watch?v=sIE0mcOGnms" target="_blank"><img src="http://img.youtube.com/vi/sIE0mcOGnms/0.jpg" 
 alt="ISS ORBIT TRACKING POINTER" width="480" height="360" border="10" /></a>
